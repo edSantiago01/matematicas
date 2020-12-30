@@ -33,17 +33,13 @@ def calcularAnguloB(anguloA, ladoA, ladoB):
     print('sen(B) / b = sen(A) / a')
     print('sen(B) = (b) ( sen(A) / a )')
     print('sen(B) = ('+str(ladoB)+') ( sen('+str(anguloA)+'°) / '+str(ladoA)+' )')
-
     valorSeno = calcularSeno(anguloA)
     print('sen(B) = (' + str(ladoB) + ') ( ' + str(round(valorSeno,3)) + ' / ' + str(ladoA) + ' )')
-
     cociente = valorSeno/ ladoA
     print('sen(B) = (' + str(ladoB) + ') ( ' + str(round(cociente, 3)) + ' )')
-
     valorSeno = ladoB * cociente
     print('sen(B) = '+str(round(valorSeno, 3)))
     print('B = arcoseno('+str(round(valorSeno, 3))+'))')
-
     valorAngulo = calcularArcoseno(valorSeno)
     print('B = ' + str(round(valorAngulo, 3)) + '°' )
     return valorAngulo
@@ -54,17 +50,17 @@ def calcularLadoC(ladoA, anguloA, anguloC):
     print('c / sen(C) = a / sen(A)')
     print('c = ( sen(C) ) ( a / sen(A) ) ')
     print('c = ( sen('+str(anguloC)+'° ) ( '+str(ladoA)+' / sen('+str(anguloA)+'°) ) ')
-
     valorSenoA = calcularSeno(anguloA)
     valorSenoC = calcularSeno(anguloC)
     print('c = ( ' + str(round(valorSenoC)) + ' ) ( ' + str(ladoA) + ' / ' + str(round(valorSenoA, 3)) + ' )')
-
     cociente = ladoA / valorSenoA
     print('c = ( ' + str(round(valorSenoC)) + ' ) ( ' + str(round(cociente)) + ' )')
-
     ladoC = valorSenoC * cociente
     print('c = ' + str(round(ladoC)))
     return ladoC
+
+print("LEY DE SENOS")
+print("A partir del valor de dos lados y un ángulo resuelve el triángulo\n")
 
 print("Magnitud del lado 'a':")
 ladoA = float(input())
@@ -77,7 +73,6 @@ ladoB = float(input())
 
 anguloB = calcularAnguloB(anguloA, ladoA, ladoB)
 anguloC = 180 - anguloA - anguloB
-
 ladoC = calcularLadoC(ladoA, anguloA, anguloC)
 
 print('\nLado A: '+str(ladoA))
