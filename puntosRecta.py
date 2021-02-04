@@ -1,5 +1,5 @@
 # LPUNTOS RECTA, Calcula la distancia, pendiente y ángulo de inclinación de un segmento de recta
-# conociento dos puntos A( x1, y1 ) - B( x2, y2 )
+# conociento dos puntos de la recta A( x1, y1 ) B( x2, y2 )
 # Copyright (C) 2021  Edgar Santiago
 #
 # This program is free software: you can redistribute it and/or modify
@@ -41,6 +41,10 @@ def calcularDistancia(x1, y1, x2, y2):
     cuadradoY = deltaY ** 2
     distancia = math.sqrt( cuadradoX + cuadradoY)
     return distancia
+def calcularPuntoMedio(x1, y1, x2, y2):
+    x = (x1+x2)/2
+    y = (y1+y2)/2
+    print("Punto medio : ("+str(round(x, 3))+", "+str(round(y, 3))+")")
 
 print("PUNTOS SOBRE LA RECTA")
 print("Calcula el punto medio, pendiente y grados de unclinación de un segmento de recta que pasa por los puntos A y B\n")
@@ -65,5 +69,5 @@ print("\n Pendiente : "+str(round(pendiente, 3)))
 print("Ángulo de inclinación : "+str(round(anguloInclinacion, 3))+"°")
 print("Distancia entre los puntos : "+str(round(distancia, 3)))
 
-
+calcularPuntoMedio(x1, y1, x2, y2)
 
