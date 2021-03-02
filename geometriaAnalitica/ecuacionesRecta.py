@@ -35,5 +35,16 @@ y2 = float(input())
 
 recta = Recta(x1, y1, x2, y2)
 recta.calcularPendiente()
-ecPuntoPendiente = recta.ecuacionPuntoPendiente()
+recta.calcularValoresEcuaciones()
+ecPuntoPendiente = recta.ecPuntoPendiente()
+ecOrdenadaOrigen = recta.ecOrdenadaOrigen()
+ecGeneral = recta.ecGeneral()
+
+print("Ecuación Punto Pendiente: \n")
 print(str(ecPuntoPendiente))
+
+print("Ecuación Ordenada al Origen: \n")
+print(str(ecOrdenadaOrigen))
+
+print("Ecuación General: \n")
+print(str(ecGeneral))
