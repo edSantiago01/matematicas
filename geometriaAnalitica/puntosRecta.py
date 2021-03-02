@@ -16,23 +16,7 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import math
-
-def calculoArcoTangente(valTan):
-    arcocotangente = math.atan(valTan)
-    valorAngulo = round(math.degrees(arcocotangente), 3)
-    return valorAngulo
-
-def calcularAnguloInclinacion( pendiente ):
-    angulo = calculoArcoTangente(pendiente)
-    if angulo < 0:
-        angulo = 180 + angulo
-    return angulo
-
-def calcularPendiente(x1, y1, x2, y2):
-    deltaX = x2 - x1
-    deltaY = y2 - y1
-    pendiente = deltaY / deltaX
-    return pendiente
+from Recta import Recta
 
 def calcularDistancia(x1, y1, x2, y2):
     deltaX = x2 - x1
@@ -60,9 +44,11 @@ x2 = float(input())
 print("Coordenada (y2):")
 y2 = float(input())
 
+recta = Recta(x1, y1, x2, y2)
+recta.calcularPendiente()
+pendiente = recta.pendiente
 
-pendiente = calcularPendiente(x1, y1, x2, y2)
-anguloInclinacion = calcularAnguloInclinacion( pendiente )
+anguloInclinacion = recta.calcularAnguloInclinacion()
 distancia = calcularDistancia(x1, y1, x2, y2)
 
 print("\n Pendiente : "+str(round(pendiente, 3)))
