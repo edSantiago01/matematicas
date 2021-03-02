@@ -17,34 +17,38 @@
 
 from Recta import Recta
 
-
-
 print("ECUACIONES DE LA RECTA")
 print("Obtener la ecuación punto pendiente, ordendad al origen y general de una recta que pasa por los puntos A y B\n")
 print("A( x1, y1 )  B( x2, y2 )\n")
 
-print("Coordenada (x1):")
-x1 = float(input())
-print("Coordenada (y1):")
-y1 = float(input())
+continuar = "s"
 
-print("Coordenada (x2):")
-x2 = float(input())
-print("Coordenada (y2):")
-y2 = float(input())
+while continuar != "q":
+    print("Coordenada (x1):")
+    x1 = float(input())
+    print("Coordenada (y1):")
+    y1 = float(input())
 
-recta = Recta(x1, y1, x2, y2)
-recta.calcularPendiente()
-recta.calcularValoresEcuaciones()
-ecPuntoPendiente = recta.ecPuntoPendiente()
-ecOrdenadaOrigen = recta.ecOrdenadaOrigen()
-ecGeneral = recta.ecGeneral()
+    print("Coordenada (x2):")
+    x2 = float(input())
+    print("Coordenada (y2):")
+    y2 = float(input())
 
-print("Ecuación Punto Pendiente: \n")
-print(str(ecPuntoPendiente))
+    recta = Recta(x1, y1, x2, y2)
+    recta.calcularPendiente()
+    recta.calcularValoresEcuaciones()
+    ecPuntoPendiente = recta.ecPuntoPendiente()
+    ecOrdenadaOrigen = recta.ecOrdenadaOrigen()
+    ecGeneral = recta.ecGeneral()
 
-print("Ecuación Ordenada al Origen: \n")
-print(str(ecOrdenadaOrigen))
+    print("\nEcuación Punto Pendiente:")
+    print(str(ecPuntoPendiente))
 
-print("Ecuación General: \n")
-print(str(ecGeneral))
+    print("\nEcuación Ordenada al Origen:")
+    print(str(ecOrdenadaOrigen))
+
+    print("\nEcuación General:")
+    print(str(ecGeneral))
+
+    print("\nContinuar (s) salir (q):")
+    continuar = str(input())
