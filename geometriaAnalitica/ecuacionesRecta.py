@@ -36,10 +36,21 @@ while continuar != "q":
 
     recta = Recta(x1, y1, x2, y2)
     recta.calcularPendiente()
+
+    pendiente = recta.pendiente
+    anguloInclinacion = recta.calcularAnguloInclinacion()
+    distancia  = recta.calcularDistancia()
+    puntoMedio = recta.calcularPuntoMedio()
+
     recta.calcularValoresEcuaciones()
     ecPuntoPendiente = recta.ecPuntoPendiente()
     ecOrdenadaOrigen = recta.ecOrdenadaOrigen()
     ecGeneral = recta.ecGeneral()
+
+    print("\n Pendiente : " + str(round(pendiente, 3)))
+    print("Ángulo de inclinación : " + str(round(anguloInclinacion, 3)) + "°")
+    print("Distancia entre los puntos : " + str(round(distancia, 3)))
+    print("Punto Medio : " + puntoMedio)
 
     print("\nEcuación Punto Pendiente:")
     print(str(ecPuntoPendiente))

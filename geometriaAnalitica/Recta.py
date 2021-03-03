@@ -51,6 +51,20 @@ class Recta:
         if self.b > 0:
             self.signoB = "+"
 
+    def calcularDistancia(self):
+        deltaX = self.x2 - self.x1
+        deltaY = self.y2 - self.y1
+        cuadradoX = deltaX ** 2
+        cuadradoY = deltaY ** 2
+        distancia = math.sqrt(cuadradoX + cuadradoY)
+        return distancia
+
+    def calcularPuntoMedio(self):
+        x = (self.x1 + self.x2) / 2
+        y = (self.y1 + self.y2) / 2
+        puntoMedio = "(" + str(round(x, 3)) + ", " + str(round(y, 3)) + ")"
+        return puntoMedio
+
 
     def ecPuntoPendiente(self): # y - y1 = m(x - x1)
         ecuacion = "y "+self.signoY1PuntoP+" "+str(Fraction(self.y1PuntoP).limit_denominator())+" = "+str(Fraction(self.pendiente).limit_denominator())+" x "+self.signoBPuntoP+" "+str(Fraction(self.bPuntoP).limit_denominator())
